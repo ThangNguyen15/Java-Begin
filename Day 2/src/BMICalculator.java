@@ -24,19 +24,19 @@ public class BMICalculator {
             System.out.println();
         }
 
-        if (BMI>=18.5 && BMI<25) {
+        else if (BMI<25) {
             System.out.print("" + name);
             System.out.print(" is balanced.");
             System.out.println();
         }
 
-        if (BMI>=25 && BMI<=30) {
+        else if (BMI<=30) {
             System.out.print("" + name);
             System.out.print(" is overweight.");
             System.out.println();
         }
 
-        if (BMI>30) {
+        else {
             System.out.print("" + name);
             System.out.print("too fat!");
             System.out.println();
