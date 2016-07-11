@@ -27,9 +27,9 @@ public class StudentManager {
     }
 
     public void displayStudent() {
-        System.out.println("\tName\t\t\t\tGender\t\t\tAge");
+        System.out.println("Index\t\t\tName\t\t\t\tGender\t\t\tAge");
         for (int i = 0; i < noOfStudent + num; i++) {
-            System.out.printf("%10s %18s %12s", students[i].getName(), students[i].getGender(), students[i].getAge());
+            System.out.printf("%2d%20s %18s %12s", i, students[i].getName(), students[i].getGender(), students[i].getAge());
             System.out.println();
         }
     }

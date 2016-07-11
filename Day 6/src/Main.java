@@ -49,7 +49,7 @@ public class Main {
                 default:
                     System.out.println("Try again!");
             }
-        } while (option != 4);
+        } while (option != 5);
     }
 }
 
