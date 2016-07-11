@@ -45,13 +45,17 @@ public class Student {
         this.age = age;
     }
 
-    public void addStudent() {
+    public void getStudent() {
         System.out.println("Student's name: ");
         setName(input.nextLine());
         System.out.println("Student's gender: ");
         setGender(input.nextLine());
         System.out.println("Student's  age: ");
         setAge(input.nextInt());
+    }
+
+    public String toString() {
+        return this.getName() +"\t" + this.getGender() +"\t" +this.getAge();
     }
 }
 

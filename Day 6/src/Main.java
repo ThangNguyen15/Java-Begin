@@ -31,7 +31,10 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("========STUDENT'S INFO========");
-                    studentManager.displayStudent();
+                    Student[] showStudent = studentManager.getArrayStudent();
+                    for (int i = 0; i < studentManager.getNoOfStudent() + studentManager.getNum(); i++) {
+                        System.out.println(showStudent[i].toString());
+                    }
                     break;
                 case 3:
                     System.out.println("Enter number of student you want to add: ");
