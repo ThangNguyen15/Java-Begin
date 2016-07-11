@@ -21,10 +21,6 @@ public class Student {
         this.age = age;
     }
 
-    public int getIndex() {
-        return index;
-    }
-
     public String getName() {
         return name;
     }
@@ -35,10 +31,6 @@ public class Student {
 
     public int getAge() {
         return age;
-    }
-
-    public void setIndex(int index){
-        this.index = index;
     }
 
     public void setName(String name) {

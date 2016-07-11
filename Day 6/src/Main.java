@@ -17,7 +17,8 @@ public class Main {
             System.out.println("2. Show student.");
             System.out.println("3. Add student.");
             System.out.println("4. Delete student.");
-            System.out.println("5. Quit program.");
+            System.out.println("5. Edit student");
+            System.out.println("6. Quit program.");
             System.out.println("Your option: ");
             option = input.nextInt();
 
@@ -41,15 +42,19 @@ public class Main {
                 case 4:
                     System.out.println("Enter index of student you want to delete:");
                     int index = input.nextInt();
-                    student.setIndex(index);
-                    System.out.println(studentManager.deleteStudent());
+                    studentManager.deleteStudent(index);
                     break;
                 case 5:
+                    System.out.println("Enter index of student you want to edit: ");
+                    index = input.nextInt();
+                    studentManager.editStudent(index);
+                    break;
+                case 6:
                     break;
                 default:
                     System.out.println("Try again!");
             }
-        } while (option != 5);
+        } while (option != 6);
     }
 }
 
