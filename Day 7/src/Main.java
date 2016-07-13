@@ -28,7 +28,6 @@ public class Main {
                     System.out.println("Enter contact phone number: ");
                     entry.setPhoneNumber(input.nextLine());
                     phoneBook.addEntry(entry);
-                    System.out.println(phoneBook.getNumberOfEntries());
                     break;
                 case 2:
                     System.out.println("1. Modify contact name");
