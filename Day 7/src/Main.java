@@ -4,12 +4,9 @@ import java.util.Scanner;
  * Created by ThangNguyen on 7/13/2016.
  */
 public class Main {
-    public static PhoneBook phoneBook = new PhoneBook();
-    public static PhoneEntry entry = new PhoneEntry();
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
+        PhoneBook phoneBook = new PhoneBook();
         int option;
         do {
             System.out.println("PHONE BOOK PROGRAM");
@@ -23,12 +20,15 @@ public class Main {
             option = input.nextInt();
             switch (option) {
                 case 1:
+                    PhoneEntry entry = new PhoneEntry();
+
                     input.nextLine();
                     System.out.println("Enter contact name: ");
                     entry.setName(input.nextLine());
                     System.out.println("Enter contact phone number: ");
                     entry.setPhoneNumber(input.nextLine());
                     phoneBook.addEntry(entry);
+                    System.out.println(phoneBook.getNumberOfEntries());
                     break;
                 case 2:
                     System.out.println("1. Modify contact name");
@@ -67,23 +67,25 @@ public class Main {
                     int opt = input.nextInt();
                     switch (opt) {
                         case 1:
+                            input.nextLine();
                             System.out.println("Enter keyword to search: ");
                             entryName = input.nextLine();
-                            input.nextLine();
-                            phoneBook.findEntryByName(entryName);
+                            System.out.println(phoneBook.findEntryByName(entryName));
                             break;
                         case 2:
+                            input.nextLine();
                             System.out.println("Enter number to search: ");
                             String entryNumber = input.nextLine();
-                            input.nextLine();
-                            phoneBook.findEntryByNumber(entryNumber);
+                            System.out.println(phoneBook.findEntryByNumber(entryNumber));
                             break;
                     }
                     break;
                 case 5:
                     System.out.println("Name\tPhone Number");
                     if (phoneBook.getNumberOfEntries() != 0) {
-                        System.out.println(phoneBook.toString());
+                        for (int i = 0; i < phoneBook.getNumberOfEntries(); i++) {
+                            System.out.println(phoneBook.getPhoneEntries()[i].toString());
+                        }
                     }
                     break;
                 case 6:

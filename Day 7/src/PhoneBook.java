@@ -2,8 +2,12 @@
  * Created by ThangNguyen on 7/11/2016.
  */
 public class PhoneBook {
-    private int numberOfEntries;
+    private static int numberOfEntries;
     private PhoneEntry[] phoneEntries = new PhoneEntry[1000];
+
+    public PhoneEntry[] getPhoneEntries() {
+        return phoneEntries;
+    }
 
     public PhoneBook() {
     }
@@ -77,9 +81,6 @@ public class PhoneBook {
     }
 
     public String toString() {
-        for (int i = 0; i < numberOfEntries; i++) {
-            return phoneEntries[i].toString();
-        }
         return phoneEntries.toString();
     }
 
