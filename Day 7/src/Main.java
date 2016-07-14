@@ -20,13 +20,12 @@ public class Main {
             option = input.nextInt();
             switch (option) {
                 case 1:
-                    PhoneEntry entry = new PhoneEntry();
-
                     input.nextLine();
                     System.out.println("Enter contact name: ");
-                    entry.setName(input.nextLine());
+                    String name = input.nextLine();
                     System.out.println("Enter contact phone number: ");
-                    entry.setPhoneNumber(input.nextLine());
+                    String phoneNumber = input.nextLine();
+                    PhoneEntry entry = new PhoneEntry(name, phoneNumber);
                     phoneBook.addEntry(entry);
                     break;
                 case 2:
