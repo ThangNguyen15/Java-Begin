@@ -10,10 +10,6 @@ public class PhoneBook {
         public PhoneBook() {
         }
 
-        public int getPhoneEntriesSize() {
-            return phoneEntries.size();
-        }
-
         public boolean addEntry(PhoneEntry entry) {
             if (!isDuplicateName(entry.getName()) && !isDuplicateNumber(entry.getPhoneNumber())) {
                 phoneEntries.add(entry);
@@ -93,6 +89,16 @@ public class PhoneBook {
         private boolean isDuplicateNumber(ArrayList <String> entryNumber) {
             for (int i = 0; i < phoneEntries.size(); i++) {
                 if (phoneEntries.get(i).getPhoneNumber().equals(entryNumber)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public boolean addPhoneNumber(String entryName, ArrayList<String> newNumber) {
+            for (int i = 0; i < phoneEntries.size(); i++) {
+                if (phoneEntries.get(i).getName().equals(entryName)) {
+                    phoneEntries.get(i).getPhoneNumber().addAll(newNumber);
                     return true;
                 }
             }
