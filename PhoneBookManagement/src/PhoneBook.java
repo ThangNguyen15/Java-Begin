@@ -35,9 +35,7 @@ public class PhoneBook {
         public boolean modifyEntryNumber(String entryName, ArrayList<String> newNumber) {
             for (int i = 0; i < phoneEntries.size(); i++) {
                 if (phoneEntries.get(i).getName().equals(entryName)) {
-                    phoneEntries.remove(i);
-                    PhoneEntry entry = new PhoneEntry(entryName, newNumber);
-                    phoneEntries.add(entry);
+                    phoneEntries.get(i).setPhoneNumber(newNumber);
                     return true;
                 }
             }
