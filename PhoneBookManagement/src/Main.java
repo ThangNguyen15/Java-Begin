@@ -17,7 +17,7 @@ public class Main {
             System.out.println("4.Search contact");
             System.out.println("5.Show all contact");
             System.out.println("6.Add phone number to existing contact");
-            System.out.println("7. Quit program");
+            System.out.println("7.Quit program");
             System.out.println("Enter your option: ");
             option = input.nextInt();
             switch (option) {
@@ -26,18 +26,12 @@ public class Main {
                     input.nextLine();
                     System.out.println("Enter contact name: ");
                     String name = input.nextLine();
-                    System.out.println("Enter contact phone number: ");
-                    phoneNumber.add(input.nextLine());
-                    System.out.println("Do you want to add another phone number to this contact? ");
-                    String opt = input.nextLine();
-                    if (opt.equals("y") || opt.equals("Y")) {
-                        System.out.println("How many phone numbers do you want to add? ");
-                        int noOfPhoneNumber = input.nextInt();
-                        input.nextLine();
-                        for (int i = 0; i < noOfPhoneNumber; i++) {
-                            System.out.println("Enter contact phone number: ");
-                            phoneNumber.add(input.nextLine());
-                        }
+                    System.out.println("How many phone numbers do you want to add? ");
+                    int noOfPhoneNumber = input.nextInt();
+                    input.nextLine();
+                    for (int i = 0; i < noOfPhoneNumber; i++) {
+                        System.out.println("Enter contact phone number: ");
+                        phoneNumber.add(input.nextLine());
                     }
                     PhoneEntry entry = new PhoneEntry(name, phoneNumber);
                     phoneBook.addEntry(entry);
@@ -61,18 +55,12 @@ public class Main {
                             input.nextLine();
                             System.out.println("Enter contact name you want to modify: ");
                             String entryName = input.nextLine();
-                            System.out.println("Enter contact new number: ");
-                            newNumber.add(input.nextLine());
-                            System.out.println("Do you want to add another phone number to this contact? ");
-                            String opt1 = input.nextLine();
-                            if (opt1.equals("y") || opt1.equals("Y")) {
-                                System.out.println("How many phone numbers do you want to add? ");
-                                int noOfPhoneNumber = input.nextInt();
-                                input.nextLine();
-                                for (int i = 0; i < noOfPhoneNumber; i++) {
-                                    System.out.println("Enter contact phone number: ");
-                                    newNumber.add(input.nextLine());
-                                }
+                            System.out.println("How many phone numbers do you want to add? ");
+                            noOfPhoneNumber = input.nextInt();
+                            input.nextLine();
+                            for (int i = 0; i < noOfPhoneNumber; i++) {
+                                System.out.println("Enter contact phone number: ");
+                                newNumber.add(input.nextLine());
                             }
                             phoneBook.modifyEntryNumber(entryName, newNumber);
                             break;
@@ -92,7 +80,7 @@ public class Main {
                     switch (opt2) {
                         case 1:
                             input.nextLine();
-                            System.out.println("Enter keyword to search: ");
+                            System.out.println("Enter contact name to search: ");
                             entryName = input.nextLine();
                             System.out.println(phoneBook.findEntryByName(entryName));
                             break;
@@ -113,19 +101,13 @@ public class Main {
                     input.nextLine();
                     System.out.println("Enter contact you want to add phone number: ");
                     entryName = input.nextLine();
-                    System.out.println("Enter phone number to add: ");
-                    newNumber.add(input.nextLine());
-                    System.out.println("Want to add more phone number? ");
-                    String opt3 = input.nextLine();
-                    if (opt3.equals("y")||opt3.equals("Y")) {
-                        System.out.println("How many phone numbers do you want to add? ");
-                        int noOfPhoneNumber = input.nextInt();
-                        input.nextLine();
-                        for (int i = 0; i < noOfPhoneNumber; i++) {
-                            System.out.println("Enter contact phone number: ");
-                            newNumber.add(input.nextLine());
+                    System.out.println("How many phone numbers do you want to add? ");
+                    noOfPhoneNumber = input.nextInt();
+                    input.nextLine();
+                    for (int i = 0; i < noOfPhoneNumber; i++) {
+                        System.out.println("Enter contact phone number: ");
+                        newNumber.add(input.nextLine());
                         }
-                    }
                     phoneBook.addPhoneNumber(entryName, newNumber);
                     break;
                 case 7:

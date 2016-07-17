@@ -69,11 +69,11 @@ public class PhoneBook {
         }
 
         public String toString() {
-            String getListOfContact = "";
+            String listOfContact = "";
             for (int i = 0; i < phoneEntries.size(); i++) {
-                getListOfContact += phoneEntries.get(i).toString() + "\n";
+                listOfContact += phoneEntries.get(i).toString() + "\n";
             }
-            return getListOfContact;
+            return listOfContact;
         }
 
 
