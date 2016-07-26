@@ -9,7 +9,6 @@ public abstract class Hero {
     protected int intelligence;
     protected int attack;
     protected int defense;
-//    protected int hp;
     protected Weapons weapon;
     protected Armors armor;
 
@@ -36,4 +35,13 @@ public abstract class Hero {
         return "I'm ready for anything";
     }
 
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "attack=" + attack +
+                ", defense=" + defense +
+                ", taunt line= " + tauntLine() +
+                '}';
+
+    }
 }

@@ -12,7 +12,11 @@ public class Mage extends Hero {
     }
 
     public void setAttack(Weapons weapon) {
-        this.attack = level + weapon.getLevel() + weapon.getIntelligenceBonus();
+        if (weapon == null) {
+            this.attack = level;
+        } else {
+            this.attack = level + weapon.getLevel() + weapon.getIntelligenceBonus();
+        }
     }
 
     public int getAttack() {
@@ -20,22 +24,22 @@ public class Mage extends Hero {
     }
 
     public void setDefense(Armors armor) {
-        this.defense = level + armor.getLevel() + armor.getIntelligenceBonus();
+        if (armor == null) {
+            this.defense = level;
+        } else {
+            this.defense = level + armor.getLevel() + armor.getIntelligenceBonus();
+        }
     }
 
     public int getDefense() {
         return defense;
     }
 
+    public void setTauntLine(){
+        this.tauntLine = "Mind over matter";
+    }
 
-//    @Override
-//    public void fight(Hero hero) {
-//
-//    }
-//
-
-    public String setTauntLine(){
-        return "Mind over matter";
-
+    public String getTauntLine() {
+        return tauntLine;
     }
 }

@@ -11,7 +11,12 @@ public class Archer extends Hero {
     }
 
     public void setAttack(Weapons weapon) {
-        this.attack = level + weapon.getLevel() + weapon.getDexterityBonus();
+        if (weapon==null){
+            this.attack = level;
+        }
+        else {
+            this.attack = level + weapon.getLevel() + weapon.getDexterityBonus();
+        }
     }
 
     public int getAttack() {
@@ -19,16 +24,21 @@ public class Archer extends Hero {
     }
 
     public void setDefense(Armors armor) {
-        this.defense = level + armor.getLevel() + armor.getDexterityBonus();
+        if (armor == null) {
+            this.defense = level;
+        } else {
+            this.defense = level + armor.getLevel() + armor.getDexterityBonus();
+        }
     }
 
     public int getDefense() {
         return defense;
     }
 
-    public void setTauntLine(Weapons weapon, Armors armor){
-        tauntLine = "Aim twice, shoot one.\n" + weapon.getTauntLine() + "\n" + armor.getTauntLine();
+    public void setTauntLine() {
+        this.tauntLine = "Aim twice, shoot one.";
     }
+
 
     public String getTauntLine() {
         return tauntLine;

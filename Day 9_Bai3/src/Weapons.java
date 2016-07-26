@@ -7,7 +7,8 @@ public abstract class Weapons extends Equipment {
     protected int intelligenceBonus;
     protected String tauntLine;
 
-    public Weapons() {}
+    public Weapons() {
+    }
 
     public Weapons(int level) {
         super(level);

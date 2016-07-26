@@ -2,6 +2,7 @@
  * Created by ThangNguyen on 7/22/2016.
  */
 public class Warrior extends Hero {
+    protected  String tauntLine;
 
     public Warrior() {}
 
@@ -10,7 +11,11 @@ public class Warrior extends Hero {
     }
 
     public void setAttack(Weapons weapon) {
-        this.attack = level + weapon.getLevel() + weapon.getStrengthBonus();
+        if (weapon == null) {
+            this.attack = level;
+        } else {
+            this.attack = level + weapon.getLevel() + weapon.getStrengthBonus();
+        }
     }
 
     public int getAttack() {
@@ -18,24 +23,24 @@ public class Warrior extends Hero {
     }
 
     public void setDefense(Armors armor) {
-        this.defense = level + armor.getLevel() + armor.getStrengthBonus();
+        if (armor == null) {
+            this.attack = level;
+        } else {
+            this.defense = level + armor.getLevel() + armor.getStrengthBonus();
+        }
     }
 
     public int getDefense() {
         return defense;
     }
 
-//
-//    @Override
-//    public void fight(Hero hero) {
-//
-//    }
 
 
+    public void setTauntLine(){
+        this.tauntLine = "I AM MIGHTY";
+    }
 
-    @Override
-    public String tauntLine(){
-        return "I AM MIGHTY";
-
+    public String getTauntLine() {
+        return tauntLine;
     }
 }
