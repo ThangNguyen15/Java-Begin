@@ -34,14 +34,4 @@ public abstract class Hero {
     public String tauntLine(){
         return "I'm ready for anything";
     }
-
-    @Override
-    public String toString() {
-        return "Hero{" +
-                "attack=" + attack +
-                ", defense=" + defense +
-                ", taunt line= " + tauntLine() +
-                '}';
-
-    }
 }
