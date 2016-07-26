@@ -9,6 +9,7 @@ public class Main {
         hero.setDefense(null);
         weapon.setTauntLine();
         hero.setTauntLine();
+        hero.setLevel(3);
         System.out.println(hero.getAttack());
         System.out.println(hero.getDefense());
         System.out.println(hero.getTauntLine());

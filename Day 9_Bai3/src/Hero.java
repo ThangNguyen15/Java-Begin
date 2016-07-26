@@ -27,6 +27,14 @@ public abstract class Hero {
         this.armor = armor;
     }
 
+    public void setLevel(int level) {
+        this.level = level;
+        for (int i = 1; i < level; i++) {
+            this.attack += 2;
+            this.defense += 2;
+        }
+    }
+
     public abstract void setAttack(Weapons weapon);
 
     public abstract void setDefense(Armors armor);
