@@ -10,11 +10,11 @@ public class Warrior extends Hero {
         super(name, level, strength, dexterity, intelligence, attack, defense, weapon, armor);
     }
 
-    public void setAttack(Weapons weapon) {
+    public void setAttack(Hero hero, Weapons weapon) {
         if (weapon == null) {
-            this.attack = level;
+            this.attack = hero.getLevel();
         } else {
-            this.attack = level + weapon.getLevel() + weapon.getStrengthBonus();
+            this.attack = hero.getLevel() + weapon.getLevel() + weapon.getStrengthBonus();
         }
     }
 
@@ -22,11 +22,11 @@ public class Warrior extends Hero {
         return attack;
     }
 
-    public void setDefense(Armors armor) {
+    public void setDefense(Hero hero, Armors armor) {
         if (armor == null) {
-            this.attack = level;
+            this.attack = hero.getLevel();
         } else {
-            this.defense = level + armor.getLevel() + armor.getStrengthBonus();
+            this.defense = hero.getLevel() + armor.getLevel() + armor.getStrengthBonus();
         }
     }
 

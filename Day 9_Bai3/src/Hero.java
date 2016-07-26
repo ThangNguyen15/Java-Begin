@@ -29,15 +29,14 @@ public abstract class Hero {
 
     public void setLevel(int level) {
         this.level = level;
-        for (int i = 1; i < level; i++) {
-            this.attack += 2;
-            this.defense += 2;
-        }
     }
 
-    public abstract void setAttack(Weapons weapon);
+    public int getLevel() {
+        return level;
+    }
+    public abstract void setAttack(Hero hero, Weapons weapon);
 
-    public abstract void setDefense(Armors armor);
+    public abstract void setDefense(Hero hero, Armors armor);
 
     public String tauntLine(){
         return "I'm ready for anything";

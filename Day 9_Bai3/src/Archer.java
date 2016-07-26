@@ -10,12 +10,12 @@ public class Archer extends Hero {
         super(name, level, strength, dexterity, intelligence, attack, defense, weapon, armor);
     }
 
-    public void setAttack(Weapons weapon) {
+    public void setAttack(Hero hero, Weapons weapon) {
         if (weapon==null){
-            this.attack = level;
+            this.attack = hero.getLevel();
         }
         else {
-            this.attack = level + weapon.getLevel() + weapon.getDexterityBonus();
+            this.attack = hero.getLevel() + weapon.getLevel() + weapon.getDexterityBonus();
         }
     }
 
@@ -23,11 +23,11 @@ public class Archer extends Hero {
         return attack;
     }
 
-    public void setDefense(Armors armor) {
+    public void setDefense(Hero hero, Armors armor) {
         if (armor == null) {
-            this.defense = level;
+            this.defense = hero.getLevel();
         } else {
-            this.defense = level + armor.getLevel() + armor.getDexterityBonus();
+            this.defense = hero.getLevel() + armor.getLevel() + armor.getDexterityBonus();
         }
     }
 
