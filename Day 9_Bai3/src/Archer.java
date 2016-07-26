@@ -2,21 +2,16 @@
  * Created by ThangNguyen on 7/22/2016.
  */
 public class Archer extends Hero {
-    public Archer(String name, Weapons weapon, Armors armor) {
-        super(name, weapon, armor);
-        this.dexterity = 5;
+    protected String tauntLine;
+
+    public Archer() {}
+
+    public Archer(String name, int level, int strength, int dexterity, int intelligence, int attack, int defense, Weapons weapon, Armors armor) {
+        super(name, level, strength, dexterity, intelligence, attack, defense, weapon, armor);
     }
 
     public void setAttack(Weapons weapon) {
-        if (weapon.getName() == null) {
-            this.attack = level;
-        }
-        else if (weapon.getName().equals("Bow")) {
-            this.attack = level + weapon.getLevel() + weapon.getBonus();
-        }
-        else {
-            this.attack = level + weapon.getLevel();
-        }
+        this.attack = level + weapon.getLevel() + weapon.getDexterityBonus();
     }
 
     public int getAttack() {
@@ -24,32 +19,18 @@ public class Archer extends Hero {
     }
 
     public void setDefense(Armors armor) {
-        if (armor.getName() == null) {
-            this.defense = level;
-        }
-        else if (armor.getName().equals("Leather")) {
-            this.defense = level + armor.getLevel() + armor.getBonus();
-        }
-        else {
-            this.defense = level + armor.getLevel();
-        }
+        this.defense = level + armor.getLevel() + armor.getDexterityBonus();
     }
 
     public int getDefense() {
         return defense;
     }
 
-
-    @Override
-    public void fight(Hero hero) {
-
+    public void setTauntLine(Weapons weapon, Armors armor){
+        tauntLine = "Aim twice, shoot one.\n" + weapon.getTauntLine() + "\n" + armor.getTauntLine();
     }
 
-
-
-    @Override
-    public String tauntLine(){
-        return "Aim twice, shoot one";
-
+    public String getTauntLine() {
+        return tauntLine;
     }
 }

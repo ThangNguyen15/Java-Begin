@@ -4,6 +4,9 @@
 public class Equipment {
     protected int level;
 
+    public Equipment() {
+    }
+
     public Equipment(int level) {
         this.level = level;
     }

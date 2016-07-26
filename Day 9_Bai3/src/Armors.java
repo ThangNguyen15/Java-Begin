@@ -2,38 +2,28 @@
  * Created by ThangNguyen on 7/22/2016.
  */
 public class Armors extends Equipment{
-    protected int bonus;
-    protected String name;
+    protected int strengthBonus;
+    protected int dexterityBonus;
+    protected int intelligenceBonus;
     protected String tauntLine;
-    public Armors(int level, int bonus, String name) {
+
+    public Armors() {
+    }
+
+    public Armors(int level) {
         super(level);
-        this.bonus = bonus;
-        this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public int getStrengthBonus() {
+        return strengthBonus;
     }
 
-    public int getBonus() {
-        return bonus;
+    public int getDexterityBonus() {
+        return dexterityBonus;
     }
 
-    public void setTauntLine(Armors armor) {
-        switch (armor.getName()) {
-            case "Clothes":
-               tauntLine = "Your normal clothes blocks the attack";
-               break;
-            case "Chainmail":
-                tauntLine = "Your mighty chainmail blocks the attack";
-                break;
-            case "Leather":
-                tauntLine = "Your sneaky armor allows you to dodge the attack";
-                break;
-            case "Robes":
-                tauntLine = "Your magical robes protect you from the attack";
-                break;
-        }
+    public int getIntelligenceBonus() {
+        return intelligenceBonus;
     }
 
     public String getTauntLine() {

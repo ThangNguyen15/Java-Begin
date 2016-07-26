@@ -9,43 +9,28 @@ public abstract class Hero {
     protected int intelligence;
     protected int attack;
     protected int defense;
-    protected int hp;
+//    protected int hp;
     protected Weapons weapon;
     protected Armors armor;
 
-    public Hero (String name, Weapons weapon, Armors armor ) {
+    public Hero() {
+    }
+
+    public Hero(String name, int level, int strength, int dexterity, int intelligence, int attack, int defense, Weapons weapon, Armors armor) {
         this.name = name;
+        this.level = level;
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.intelligence = intelligence;
+        this.attack = attack;
+        this.defense = defense;
         this.weapon = weapon;
         this.armor = armor;
     }
 
-    public void setAttack(Weapons weapon) {
-       if (weapon.getName() == null) {
-           this.attack = level;
-       }
-       else {
-           this.attack = level + weapon.getLevel();
-       }
-    }
+    public abstract void setAttack(Weapons weapon);
 
-    public int getAttack() {
-        return  attack;
-    }
-
-    public void setDefense(Armors armor) {
-        if (armor.getName() == null) {
-            this.defense = level;
-        }
-        else {
-            this.defense = level + armor.getLevel();
-        }
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-//    public abstract void fight(Hero hero);
+    public abstract void setDefense(Armors armor);
 
     public String tauntLine(){
         return "I'm ready for anything";

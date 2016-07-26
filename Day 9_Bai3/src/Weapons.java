@@ -1,42 +1,32 @@
 /**
  * Created by ThangNguyen on 7/22/2016.
  */
-public class Weapons extends Equipment {
-    protected int bonus;
-    protected String name;
+public abstract class Weapons extends Equipment {
+    protected int strengthBonus;
+    protected int dexterityBonus;
+    protected int intelligenceBonus;
     protected String tauntLine;
-    public Weapons(int level, int bonus, String name) {
+
+    public Weapons() {}
+
+    public Weapons(int level) {
         super(level);
-        this.bonus = bonus;
-        this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public int getStrengthBonus() {
+        return strengthBonus;
     }
 
-    public int getBonus() {
-        return bonus;
+    public int getDexterityBonus() {
+        return dexterityBonus;
     }
 
-    public void setTauntLine(Weapons weapon) {
-        switch (weapon.getName()) {
-            case "Stick":
-                this.tauntLine = "You poke your stick for";
-                break;
-            case "Axe":
-                this.tauntLine = "You swing your mighty axe for";
-                break;
-            case "Bow":
-                this.tauntLine = "You shoot an arrow for";
-                break;
-            case "Staff":
-                this.tauntLine = "You cast a spell for";
-                break;
-        }
+    public int getIntelligenceBonus() {
+        return intelligenceBonus;
     }
 
     public String getTauntLine() {
         return tauntLine;
     }
+
 }
